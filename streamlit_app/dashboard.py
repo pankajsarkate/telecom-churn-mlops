@@ -23,9 +23,18 @@ payload = {
     "contract_type": contract
 }
 
+# if st.button("Predict", key="predict_button"):
+#     try:
+#         response = requests.post("http://localhost:8000/predict", json=payload)
+#         st.write(response.json())
+#     except requests.exceptions.ConnectionError:
+#         st.error("❌ FastAPI server is not running at localhost:8000")
+
+API_URL = "https://telecom-churn-api.onrender.com/predict"  # placeholder for future
+
 if st.button("Predict", key="predict_button"):
     try:
-        response = requests.post("http://localhost:8000/predict", json=payload)
+        response = requests.post(API_URL, json=payload)
         st.write(response.json())
-    except requests.exceptions.ConnectionError:
-        st.error("❌ FastAPI server is not running at localhost:8000")
+    except:
+        st.warning("⚠️ Prediction API is currently unavailable.")
