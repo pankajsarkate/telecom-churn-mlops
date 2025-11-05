@@ -30,7 +30,7 @@ payload = {
 #     except requests.exceptions.ConnectionError:
 #         st.error("❌ FastAPI server is not running at localhost:8000")
 
-API_URL = "https://telecom-churn-api.onrender.com/predict"  # placeholder for future
+API_URL = "https://telecom-churn-production.up.railway.app/predict"  # placeholder for future
 
 if st.button("Predict", key="predict_button"):
     try:
